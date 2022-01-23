@@ -1,28 +1,27 @@
 package Entities;
 
 public class BusinessAccount extends Account{
-	private Double loanLimit;
-	public BusinessAccount(){
+	private Double loanlimit;
+	
+	public BusinessAccount() {
 		
 	}
-	public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
+
+	public BusinessAccount(Integer number, String holder, Double balance, Double loanlimit) {
 		super(number, holder, balance);
-		this.loanLimit = loanLimit;
+		this.loanlimit = loanlimit;
 	}
-	public Double getLoanLimit() {
-		return loanLimit;
+
+	public Double getLoanlimit() {
+		return loanlimit;
 	}
-	public void setLoanLimit(Double loanLimit) {
-		this.loanLimit = loanLimit;
+
+	public void setLoanlimit(Double loanlimit) {
+		this.loanlimit = loanlimit;
 	}
-	public void loan (double amount) {
-		if (amount<=loanLimit) {
-			deposit (amount);
+	public void loan(Double amount) {
+		if (amount <= loanlimit) {
+			deposit(amount);
 		}
-	}
-	@Override
-	public void withdraw(double amount) {
-		super.withdraw(amount);
-		balance -= 2.0;
 	}
 }

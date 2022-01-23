@@ -10,7 +10,8 @@ public class Account {
 	}
 
 	public Account(Integer number, String holder, Double balance) {
-	    this.number = number;
+		
+		this.number = number;
 		this.holder = holder;
 		this.balance = balance;
 	}
@@ -35,13 +36,13 @@ public class Account {
 		return balance;
 	}
 
-	public void setBalance(Double balance) {
-		this.balance = balance;
-	}
+	
 	public void withdraw(double amount) {
-		balance -= amount +5;
+		balance -= amount + 5.0;
 	}
 	public void deposit(double amount) {
 		balance += amount;
 	}
+
+	
 }
