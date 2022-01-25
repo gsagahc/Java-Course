@@ -66,7 +66,7 @@ public class Order {
 		sb.append("Order moment: ");
 		sb.append(sdf.format(moment) + "\n");
 		sb.append("Order status: ");
-		sb.append(status + "\n");
+		sb.append(getOrderstatus() + "\n");
 		sb.append("Client: ");
 		sb.append(client + "\n");
 		sb.append("Order items:\n");
