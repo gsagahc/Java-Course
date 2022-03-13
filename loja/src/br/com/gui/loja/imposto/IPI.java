@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 import br.com.gui.loja.orcamento.Orcamento;
 
-public class ICMS extends Imposto{
-	public ICMS(Imposto outro) {
+public class IPI extends Imposto{
+	public IPI(Imposto outro) {
 		super(outro);
 		
 	}

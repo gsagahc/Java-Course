@@ -7,6 +7,7 @@ import java.util.Scanner;
 import br.com.gui.loja.pedido.GeraPedido;
 import br.com.gui.loja.pedido.GeraPedidoHandler;
 import br.com.gui.loja.pedido.acao.EnviarEmail;
+import br.com.gui.loja.pedido.acao.LogDePedido;
 import br.com.gui.loja.pedido.acao.SalvarPedidoBanco;
 
 public class TestePedidos {
@@ -25,7 +26,8 @@ public class TestePedidos {
 	  GeraPedido pedido = new GeraPedido(cliente, valor, quantidade);
 	  GeraPedidoHandler handler = new GeraPedidoHandler(
 			  Arrays.asList(new SalvarPedidoBanco(),
-			  new EnviarEmail()));
+			  new EnviarEmail(),
+			  new LogDePedido()));
 	  handler.executa(pedido);
 	  
 	  System.out.println(pedido.toString());

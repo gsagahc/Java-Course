@@ -1,18 +1,21 @@
 package br.com.gui.loja.orcamento;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.gui.loja.orcamento.situacao.EmAnalise;
 import br.com.gui.loja.orcamento.situacao.SituacaoOrcamento;
 
-public class Orcamento {
+public class Orcamento implements Orcavel {
 	private BigDecimal valor;
-	private int quantidadeDeItens;
 	private SituacaoOrcamento situacao;
+	private List<Orcavel> itens ;
 
-	public Orcamento(BigDecimal valor, int quantidadeDeItens) {
-			this.valor = valor;
-			this.quantidadeDeItens= quantidadeDeItens;
+	
+	public Orcamento() {
+			this.valor = BigDecimal.ZERO;
+			this.itens= new ArrayList<>();
 			this.situacao= new EmAnalise();
 	}
 	public void aplicarDescontoExtra() {
@@ -29,10 +32,17 @@ public class Orcamento {
 		this.situacao.finalizar(this);
 	}
 	public BigDecimal getValor() {
-		return valor;
+		try {
+			Thread.sleep(2000);
+		}catch  (InterruptedException e){
+			throw new RuntimeException(e);
+			
+		}
+				
+		return this.valor;
 	} 
 	public int getquantidadeDeItens() {
-		return quantidadeDeItens;
+		return itens.size();
 	}
 	public SituacaoOrcamento getSituacao() {
 		return situacao;
@@ -40,7 +50,15 @@ public class Orcamento {
 	public void setSituacao(SituacaoOrcamento situacao) {
 		this.situacao = situacao;
 	}
-	
+	public boolean isFinalizado() {
+		// TODO Auto-generated method stub
+		return situacao instanceof SituacaoOrcamento;
+	}
+	public void adicionarItem(Orcavel item) {
+		this.valor =  valor.add(item.getValor());
+		this.itens.add(item);
+		
+	}
 	
 
 }
