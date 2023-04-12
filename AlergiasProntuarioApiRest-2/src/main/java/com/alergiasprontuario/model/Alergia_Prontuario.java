@@ -3,7 +3,9 @@ package com.alergiasprontuario.model;
 
 
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+
 
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,6 +18,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.NamedNativeQueries;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedStoredProcedureQueries;
+import jakarta.persistence.NamedStoredProcedureQuery;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -26,15 +33,34 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
+@Entity(name = "Alergia")
+@NamedNativeQueries({
+		
+    @NamedNativeQuery(
+            name = "Alergia.cancelar",
+            query =
+                "update alergia_prontuario set cod_pro_canc=:codPro, "
+            	+"dt_hr_canc_alergia=:dataHora  "
+                + "where id_alergia=:id ",              
+                resultClass = Alergia_Prontuario.class),
+    
+    
+    })
+ 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
 @Table(name="alergia_prontuario")
-@Entity(name = "Alergia")
-public class Alergia_Prontuario {
+
+public class Alergia_Prontuario implements Serializable {
    
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@SequenceGenerator(name="sequence_alerg", sequenceName="sq_seq_aleprt")
 	@Column(name="id_alergia")
@@ -50,10 +76,11 @@ public class Alergia_Prontuario {
 	private String cod_pro;
 	@Column(name="cod_pro_canc")
 	private String cod_pro_canc;
+	
 	@Column(name="dt_hr_incl_alergia")
 	private LocalDateTime dt_hr_incl_alergia = LocalDateTime.now();
 	@Column(name="dt_hr_canc_alergia")
-	private String dt_hr_canc_alergia;
+	private LocalDateTime dt_hr_canc_alergia;
 	@Column(name="alerg_txt")
 	private String alerg_txt;  
 	
@@ -67,4 +94,7 @@ public class Alergia_Prontuario {
 	   this.alerg_txt = dados.alerg_txt();
 	 
 	}
-}    
+
+
+	
+}

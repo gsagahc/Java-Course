@@ -18,7 +18,6 @@ public class HomeController {
 	           "\nEscolha uma das opções:"+
 				"\nConsultar:  /consultar/{cpf}"+
 	            "\nCadastrar:  /cadastrar/{JSON}"+
-		        "\nDeletar:    /deletar/{id_alergia}"+
 		        "\ndatahora banco:  /datahora"+
 		        "\nListar produtos alergênico/sais:  /produtos/{descricao}";
 	}		

@@ -1,5 +1,7 @@
 package com.alergiasprontuario.model;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -46,7 +48,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name="tp_produtos_alergias")
 
-public class TipoProdutoAlergia {
+public class TipoProdutoAlergia implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="cod_sal")
 	String codsal;

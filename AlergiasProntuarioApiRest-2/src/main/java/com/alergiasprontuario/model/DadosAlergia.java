@@ -4,7 +4,7 @@ package com.alergiasprontuario.model;
 
 
 public record DadosAlergia(
-		
+		String id_alergia,
 		String cod_prt,
 		String cod_sal,
 		String complemento,
