@@ -27,12 +27,11 @@ public class Usuario implements UserDetails {
 	private String email;
 	private String senha;
 	
-	@ManyToMany
+	@ManyToMany (fetch = FetchType.EAGER)
 	   @MapsId("id")
 	   @JoinColumn(name = "perfil.id")
 	private List<Perfil> perfis = new ArrayList<>();
-	//@ManyToMany(fetch = FetchType.EAGER)
-	//private List<Perfil> perfis = new ArrayList<>();
+	
 
 	@Override
 	public int hashCode() {
