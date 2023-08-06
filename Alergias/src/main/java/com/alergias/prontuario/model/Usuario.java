@@ -41,9 +41,8 @@ public class Usuario implements UserDetails {
 	
 		
 	@ManyToMany (fetch = FetchType.EAGER)
-	   @MapsId("matricula")
-	
-  @JoinColumn(name = "faususis.matricula")
+	@MapsId("matricula")
+    @JoinColumn(name = "faususis.matricula")
 	private List<Faususis> perfis = new ArrayList<>();
 	
 	@Override
@@ -98,7 +97,7 @@ public class Usuario implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return  this.perfis;
+		return this.perfis;
 	}
 
 	@Override
