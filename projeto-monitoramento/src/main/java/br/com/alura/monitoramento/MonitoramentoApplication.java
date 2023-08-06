@@ -10,7 +10,7 @@ import de.codecentric.boot.admin.server.config.EnableAdminServer;
 @EnableAutoConfiguration
 @EnableAdminServer
 public class MonitoramentoApplication {
-
+	/*Spring Boot Admin e Actuator}*/
 	public static void main(String[] args) {
 		SpringApplication.run(MonitoramentoApplication.class, args);
 	}
