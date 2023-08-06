@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class ParkingControlApplication {
-
+   /*Poejeto parking control*/
 	public static void main(String[] args) {
 		SpringApplication.run(ParkingControlApplication.class, args);}
 		@GetMapping("/") 
