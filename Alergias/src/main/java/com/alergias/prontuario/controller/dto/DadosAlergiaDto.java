@@ -28,6 +28,10 @@ public class DadosAlergiaDto {
 		this.alerg_txt = alergias.getAlerg_txt();
 	}
 	
+	public DadosAlergiaDto() {
+		
+	}
+
 	public long getId_alergia() {
 		return id_alergia;
 	}

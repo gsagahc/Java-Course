@@ -21,7 +21,7 @@ public class TokenService {
 	@Value("${alergias.jwt.expiration}")
 	private String expiration;
 	
-	//@Value("${alergias.jwt.secret}")
+	@Value("${alergias.jwt.secret}")
 	private String secret;
 	public String gerarToken(Authentication authentication) {
 		Usuario logado = (Usuario) authentication.getPrincipal();
