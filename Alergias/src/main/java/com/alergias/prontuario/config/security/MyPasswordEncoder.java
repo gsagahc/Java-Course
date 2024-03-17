@@ -49,7 +49,7 @@ public class MyPasswordEncoder implements PasswordEncoder {
 		else
 		{
 			//System.out.println(encodedPassword.toUpperCase());
-			///System.out.println(senhaCriptografada);
+			//System.out.println(senhaCriptografada);
 			logger.warn("Invalid password!" );
 			return false;
 		}	
