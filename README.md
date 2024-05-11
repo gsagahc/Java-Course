@@ -1,3 +1,6 @@
-#Java-Course#
+**Java-Course**
 Repositório de aplicações desenvolvidas nos cursos de Java
-#Udemy / Alura 
+**Udemy**
+**Alura**
+**Youtube**
+e Livros
