@@ -1,7 +1,7 @@
 **Java-Course**
-<td>Repositório de aplicações desenvolvidas nos cursos de Java</td>
-<td></td>**Udemy**</td>
-<td></td>**Alura**</td>
-<td></td>**Youtube**</td>
-<td></td>
-<td>...e Livros</td>
+<br>Repositório de aplicações desenvolvidas nos cursos de Java
+<br></td>**Udemy**
+<br></td>**Alura**
+<br></td>**Youtube**
+<br>
+<br>...e Livros
